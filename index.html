@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080910">
+<title>VANTA — Global Video Chat</title>
+<style>
+:root{color-scheme:dark;--bg:#080910;--panel:#11131f;--line:#282b40;--violet:#9b72ff;--cyan:#5de8f5}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,#201638 0%,var(--bg) 55%);color:#f6f5ff;font-family:system-ui,Arial,sans-serif;min-height:100vh}
+header{height:76px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12}
+.logo{font-size:25px;font-weight:900;letter-spacing:7px}
+.status{color:#9c9eb6;font-size:12px}
+main{max-width:1050px;margin:auto;padding:48px 20px}
+.intro{text-align:center;margin-bottom:30px}
+h1{font-size:clamp(30px,6vw,55px);margin:0 0 12px;letter-spacing:-1px}
+h1 span{color:var(--violet)}
+.intro p{color:#a4a6bd;margin:0}
+.layout{display:grid;grid-template-columns:1.5fr 1fr;gap:20px}
+.panel{background:#11131fe8;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 18px 60px #0005}
+.video{aspect-ratio:4/3;background:linear-gradient(145deg,#191a2a,#090a11);border:1px solid #303149;border-radius:15px;display:flex;align-items:center;justify-content:center;text-align:center;color:#9b9db6;overflow:hidden}
+.camera-icon{font-size:42px;display:block;margin-bottom:10px}
+.small{font-size:12px;color:#898ca7;margin-top:14px}
+.actions{display:flex;gap:10px;margin-top:14px}
+button{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:13px 16px;font-weight:750}
+.primary{background:linear-gradient(100deg,var(--violet),#7055ef);color:white;flex:1;box-shadow:0 5px 24px #8764ff30}
+.secondary{background:#222438;color:#e3e2f5;border:1px solid #363950}
+h2{font-size:17px;margin:4px 0 16px}
+.field{padding:14px;border-radius:12px;background:#191b2a;border:1px solid #2d3045;margin-bottom:12px}
+.field label{font-size:12px;color:#9c9eb6;display:block;margin-bottom:6px}
+.field strong{font-size:14px}
+.tag{display:inline-block;border:1px solid #34364e;border-radius:30px;padding:7px 10px;font-size:12px;color:#c6c1ff;margin:3px 3px 3px 0}
+.note{font-size:12px;color:#a3a5bd;line-height:1.6}
+footer{text-align:center;padding:24px;color:#696b83;font-size:12px}
+@media(max-width:700px){main{padding:32px 14px}.layout{grid-template-columns:1fr}.panel{padding:13px}header{padding:0 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">VANTA</div>
+  <div class="status">GLOBAL NETWORK · PREVIEW</div>
+</header>
+<main>
+  <section class="intro">
+    <h1>One world.<br><span>New connections.</span></h1>
+    <p>Meet people beyond borders.</p>
+  </section>
+  <div class="layout">
+    <section class="panel">
+      <div class="video">
+        <div><span class="camera-icon">◉</span><strong>Твоё окно видеочата</strong><br><span class="small">Видеосвязь пока не подключена</span></div>
+      </div>
+      <div class="actions">
+        <button class="primary" id="start">Начать поиск</button>
+        <button class="secondary" id="stop">Стоп</button>
+      </div>
+      <p class="small" id="message">Демо-интерфейс · Соединение не установлено</p>
+    </section>
+    <aside class="panel">
+      <h2>Твоя следующая встреча</h2>
+      <div class="field"><label>РЕЖИМ</label><strong>Случайный видеочат</strong></div>
+      <div class="field"><label>ГЕОГРАФИЯ</label><strong>Весь мир</strong></div>
+      <div class="field"><label>ПЛАТФОРМА</label><strong>Телефон и компьютер</strong></div>
+      <h2>VANTA experience</h2>
+      <span class="tag">Global</span><span class="tag">Dark mode</span><span class="tag">Neon UI</span><span class="tag">Responsive</span>
+      <p class="note">Мы готовим пространство для новых знакомств. Подключение камеры и реальных собеседников появится после настройки видеосервиса.</p>
+    </aside>
+  </div>
+</main>
+<footer>VANTA © 2026 · Connect beyond borders</footer>
+<script>
+const message=document.getElementById('message');
+document.getElementById('start').addEventListener('click',()=>{message.textContent='Интерфейс готов. Реальный видеосервис ещё не подключён.'});
+document.getElementById('stop').addEventListener('click',()=>{message.textContent='Поиск остановлен.'});
+</script>
+</body>
+</html>
